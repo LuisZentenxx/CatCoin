@@ -5,18 +5,21 @@
   }
   }
 
-
-  .btn-dark {
+  .btn-custom {
     position: relative;
     overflow: hidden;
     background-color: #ff5f6d;
+    color: white;
     animation: changeColor 2s ease-in-out infinite alternate;
     margin:0;
     outline: none !important;
     border-radius: 50px;
    
   }
-  
+
+  .btn-custom:hover{
+    color: white !important;
+  }
   
   @keyframes changeColor {
     0% {
@@ -107,3 +110,38 @@
     }
   }
 
+  .custom-nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2px;
+  }
+  
+  .custom-nav .nav-item {
+    margin: 0 10px;
+  }
+  
+  .custom-nav .nav-link {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  .custom-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, #9213c1, transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .custom-nav .nav-link:hover::after {
+    transform: translateX(0);
+  }
+  

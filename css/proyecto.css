@@ -1,0 +1,35 @@
+.container {
+    max-width: 600px;
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+  }
+  
+  .counter {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .counter-item {
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .counter-item span {
+    font-size: 48px;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      margin-top: 200px;
+    }
+  
+    .counter-item {
+      margin-right: 40px;
+    }
+  
+    .counter-item span {
+      font-size: 64px;
+    }
+  }
+  
