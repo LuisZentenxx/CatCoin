@@ -23,7 +23,7 @@ togglePassword.addEventListener('mouseover', function () {
 
 togglePassword.addEventListener('mouseout', function () {
   togglePassword.style.backgroundColor = 'transparent';
-  togglePassword.style.color = 'black';
+  togglePassword.style.color = 'white';
 });
 
 // Repite el mismo proceso para el campo de confirmación de contraseña
@@ -35,13 +35,13 @@ toggleConfirmPassword.addEventListener('click', function () {
 });
 
 toggleConfirmPassword.addEventListener('mouseover', function () {
-  toggleConfirmPassword.style.backgroundColor = '#543d8f';
+  toggleConfirmPassword.style.background = '#543d8f';
   toggleConfirmPassword.style.color = 'white';
 });
 
 toggleConfirmPassword.addEventListener('mouseout', function () {
   toggleConfirmPassword.style.backgroundColor = 'transparent';
-  toggleConfirmPassword.style.color = 'black';
+  toggleConfirmPassword.style.color = 'white';
 });
 
 

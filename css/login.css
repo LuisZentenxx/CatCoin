@@ -5,6 +5,11 @@
   }
   }
 
+  *{
+    font-family: 'Space Grotesk', sans-serif;
+    text-decoration: none;
+  }
+
   .btn-custom {
     position: relative;
     overflow: hidden;
@@ -124,6 +129,7 @@
   
   .custom-nav .nav-link {
     position: relative;
+    font-weight: 500;
     color: #333;
     text-decoration: none;
     overflow: hidden;
@@ -145,3 +151,6 @@
     transform: translateX(0);
   }
   
+  .text-center h4{
+    font-size: 2rem;
+  }
