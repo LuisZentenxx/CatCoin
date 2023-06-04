@@ -15,4 +15,6 @@ function updateCounter() {
   }
   
   setInterval(updateCounter, 1000);
+
+  
   
