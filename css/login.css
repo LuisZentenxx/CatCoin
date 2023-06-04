@@ -1,21 +1,10 @@
-.gradient-custom-2 {
-  background: #fccb90;
-  
-  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-  background: linear-gradient(to right, #c20e7d, #dd3675, #c745b1);
-  }
-  
+
   @media (min-width: 768px) {
   .gradient-form {
   height: 100vh !important;
   }
   }
-  @media (min-width: 769px) {
-  .gradient-custom-2 {
-  border-top-right-radius: .3rem;
-  border-bottom-right-radius: .3rem;
-  }
-  }
+
 
   .btn-dark {
     position: relative;
@@ -29,18 +18,17 @@
   }
   
   
-  
   @keyframes changeColor {
     0% {
-      background-color: #1e91e0;
+      background-color: #533c8e;
       
     }
     50% {
-      background-color: #e04251;
+      background-color: #760fa9;
   
     }
     100% {
-      background-color: #1e91e0;
+      background-color: #533c8f;
       
     }
   }
