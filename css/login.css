@@ -1,0 +1,121 @@
+.gradient-custom-2 {
+  background: #fccb90;
+  
+  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  background: linear-gradient(to right, #c20e7d, #dd3675, #c745b1);
+  }
+  
+  @media (min-width: 768px) {
+  .gradient-form {
+  height: 100vh !important;
+  }
+  }
+  @media (min-width: 769px) {
+  .gradient-custom-2 {
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+  }
+  }
+
+  .btn-dark {
+    position: relative;
+    overflow: hidden;
+    background-color: #ff5f6d;
+    animation: changeColor 2s ease-in-out infinite alternate;
+    margin:0;
+    outline: none !important;
+    border-radius: 50px;
+   
+  }
+  
+  
+  
+  @keyframes changeColor {
+    0% {
+      background-color: #1e91e0;
+      
+    }
+    50% {
+      background-color: #e04251;
+  
+    }
+    100% {
+      background-color: #1e91e0;
+      
+    }
+  }
+  
+
+  .btn-primary {
+    position: relative;
+    border-radius: 50px;
+    animation-name: moveButton;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes moveButton {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .btn-primary:hover:before {
+    width: 100%;
+  }
+
+  .animated-block {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation-name: slideInFromLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 0.2s;
+  }
+
+  .animated-text {
+    opacity: 0;
+    animation-name: jumpIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+ @keyframes jumpIn {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(1);
+    }
+    25% {
+      transform: translateY(-30px) scale(1.2);
+    }
+    50% {
+      transform: translateY(0) scale(0.8);
+    }
+    75% {
+      transform: translateY(-10px) scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
