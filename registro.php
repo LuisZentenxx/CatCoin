@@ -23,11 +23,13 @@
         <h1>REGISTRATE EN CATCOIN</h1>
         <form class="form-container needs-validation" action= "php/registro_backend.php" method="POST">
         
-            <!-- Campo Nombre -->
+            <!-- Campo Nombre y Apellido -->
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Tu nombre"
-                name="nombre_apellido" required >
+                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" 
+                placeholder="Tu nombre y apellido" name="nombre_apellido" required>
+
+
                 <div id="nameHelp" class="form-text">Introduce tu nombre completo.</div>
             </div>
 
@@ -42,12 +44,13 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                 <div class="input-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1"
-                        aria-describedby="passwordHelp" required>
+                    <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp"
+                        name="contrasenia" required>
                     <button type="button" id="togglePassword" class="btn btn-outline-secondary"><i
                             class="bi bi-eye"></i></button>
                 </div>
             </div>
+
 
             <!-- Campo Confirmación -->
             <div class="mb-3">
@@ -62,7 +65,7 @@
             </div>
 
             <!-- Botón Crear Cuenta -->
-            <button type="submit" class="btn btn-custom" onclick="redirectToAnotherPage()">Crear Cuenta</button>
+            <button type="submit" class="btn btn-custom" name="submit" onclick="redirectToAnotherPage()">Crear Cuenta</button>
         </form>
     </div>
     
