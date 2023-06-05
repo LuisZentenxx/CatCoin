@@ -1,3 +1,22 @@
+
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['usuario'])){
+        echo '
+            <script>
+                alert("Por favor debes iniciar sesión");
+                window.location="login.php";
+            </script>
+        ';
+        //header('Location: login.php');
+        session_destroy();
+        die();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +26,12 @@
     <title>Document</title>
 </head>
 <body>
-    holi
+    <section>
+        <h1>Estamos trabajando 😼😻</h1>
+
+        <a href="php/cerrar_sesion.php">CERRAR SESION</a>
+
+    </section>
+
 </body>
 </html>
