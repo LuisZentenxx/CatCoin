@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <!--CSS-->
     <link rel="stylesheet" href="css/registro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +19,15 @@
 </head>
 
 <body>
-    <div class="background-container">
+    <div class="background-container" >
         <h1>REGISTRATE EN CATCOIN</h1>
-        <form class="form-container needs-validation">
-
+        <form class="form-container needs-validation" action= "php/registro_backend.php" method="POST">
+        
             <!-- Campo Nombre -->
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre y Apellido</label>
                 <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Tu nombre"
-                    required>
+                name="nombre_apellido" required >
                 <div id="nameHelp" class="form-text">Introduce tu nombre completo.</div>
             </div>
 
@@ -34,7 +35,7 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="minombre@catcoin.cl" required>
+                    placeholder="minombre@catcoin.cl" name="correo" required >
             </div>
 
             <!-- Campo Password -->
@@ -53,7 +54,7 @@
                 <label for="exampleInputPassword2" class="form-label">Confirma tu contraseña</label>
                 <div class="input-group">
                     <input type="password" class="form-control" id="exampleInputPassword2"
-                        aria-describedby="passwordHelp" required>
+                        aria-describedby="passwordHelp" name="contrasenia" required>
                     <button type="button" id="toggleConfirmPassword" class="btn btn-outline-secondary"><i
                             class="bi bi-eye"></i></button>
                 </div>
