@@ -18,19 +18,8 @@
 
 <body>
 
-  <section class="h-100 gradient-form" style="background-image: url(img/background_register.jpg)">
+  <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
-      <ul class="nav justify-content-center custom-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="proyecto.html">Proyecto CatCoin</a>
-        </li>
-      </ul>
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
           <div class="card text-black">
@@ -39,7 +28,7 @@
                 <div class="card-body p-md-5 mx-md-4">
 
                   <div class="text-center">
-                    <img src="img/2d_cat-removebg.png" style="width: 185px;" alt="logo">
+                    <img src="img/2d_cat-removebg.png" style="width: 185px; height: 100px;" alt="logo">
                     <h4 class="mt-1 mb-5 pb-1">Bienvenidos a CatCoin</h4>
                   </div>
 
@@ -68,7 +57,7 @@
                     <!-- Campo Crear Cuenta -->
                     <div class="d-flex align-items-center justify-content-center pb-4">
                       <p class="mb-0 me-2">¿Aún no te registras?</p>
-                      <button type="submit" class="btn btn-primary">Hazlo ya!</button>
+                      <button type="submit" class="btn btn-custom1">Hazlo ya!</button>
                     </div>
                   </form>
                 </div>

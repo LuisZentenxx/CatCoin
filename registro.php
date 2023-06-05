@@ -19,8 +19,10 @@
 </head>
 
 <body>
-    <div class="background-container" style="background-image: url(img/background_register.jpg);">
-        <h1>REGISTRATE EN CATCOIN</h1>
+    <div class="background-container">
+        <video autoplay loop muted>
+            <source src="img/video.mp4" type="video/mp4">
+        </video>
         <form class="form-container needs-validation" action= "php/registro_backend.php" method="POST">
         
             <!-- Campo Nombre y Apellido -->
