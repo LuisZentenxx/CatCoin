@@ -10,6 +10,10 @@
     text-decoration: none;
   }
 
+  body {
+    overflow-y: hidden;
+  }
+
   .btn-custom {
     position: relative;
     overflow: hidden;
