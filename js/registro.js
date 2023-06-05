@@ -45,22 +45,3 @@ toggleConfirmPassword.addEventListener('mouseout', function () {
 });
 
 
-
-// Obtén el formulario y agrega un evento de envío
-const form = document.querySelector('.form-container');
-
-form.addEventListener('submit', function (event) {
-  // Detiene el envío del formulario por defecto
-  event.preventDefault();
-
-  // Verifica si los campos están completados correctamente
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('exampleInputEmail1');
-  const passwordInput = document.getElementById('exampleInputPassword1');
-  const confirmPasswordInput = document.getElementById('exampleInputPassword2');
-
-  if (nameInput.value && emailInput.value && passwordInput.value && confirmPasswordInput.value === passwordInput.value) {
-    // Redirecciona a la página deseada
-    window.location.href = 'login.html';
-  }
-});
