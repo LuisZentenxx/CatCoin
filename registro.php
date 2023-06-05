@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="background-container" >
+    <div class="background-container" style="background-image: url(img/background_register.jpg);">
         <h1>REGISTRATE EN CATCOIN</h1>
         <form class="form-container needs-validation" action= "php/registro_backend.php" method="POST">
         
