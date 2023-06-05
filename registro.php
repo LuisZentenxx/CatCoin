@@ -50,8 +50,6 @@
                             class="bi bi-eye"></i></button>
                 </div>
             </div>
-
-
             <!-- Campo Confirmación -->
             <div class="mb-3">
                 <label for="exampleInputPassword2" class="form-label">Confirma tu contraseña</label>

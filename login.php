@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
   <section class="h-100 gradient-form" style="background-image: url(img/background_register.jpg)">
     <div class="container py-5 h-100">
       <ul class="nav justify-content-center custom-nav">
@@ -42,12 +43,12 @@
                     <h4 class="mt-1 mb-5 pb-1">Bienvenidos a CatCoin</h4>
                   </div>
 
-                  <form class="login-form">
+                  <form class="login-form" action="php/login_backend.php" method="POST">
                     <p>Inicia sesión con tu cuenta</p>
 
                     <!-- Campo Email -->
                     <div class="form-outline mb-4 needs-validation">
-                      <input type="email" id="form2Example11" class="form-control" placeholder="Tu correo electrónico"
+                      <input type="email" id="form2Example11" class="form-control" placeholder="Tu correo electrónico" name="correo"
                         required />
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>
@@ -55,13 +56,13 @@
 
                     <!-- Campo Contraseña -->
                     <div class="form-outline mb-4 needs-validation">
-                      <input type="password" id="form2Example22" class="form-control" required />
+                      <input type="password" id="form2Example22" class="form-control" name="contrasenia" required />
                       <label class="form-label" for="form2Example22">Contraseña</label>
                     </div>
 
                     <!-- Boton Ingreso -->
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-custom" type="submit">Ingresa</button>
+                      <button class="btn btn-custom" type="submit" name="submit">Ingresa</button>
                     </div>
 
                     <!-- Campo Crear Cuenta -->
