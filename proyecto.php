@@ -40,7 +40,7 @@
     </div>
     
     <div class="text-center mt-4">
-      <a href="login.html" class="btn btn-custom">Ir al Home</a>
+      <a href="login.php" class="btn btn-custom">Ir al Home</a>
     </div>
   </div>
 

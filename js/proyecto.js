@@ -1,5 +1,5 @@
 function updateCounter() {
-    var countDate = new Date("June 06, 2023 00:00:00").getTime();
+    var countDate = new Date("June 07, 2023 10:30:00").getTime();
     var now = new Date().getTime();
     var difference = countDate - now;
   
