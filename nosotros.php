@@ -27,7 +27,7 @@
       <div class="box">
         <img src="img/luis.png" alt="Imagen de Barbara">
         <h3>Luis Zenteno</h3>
-        <h5>Desarrollo Frontend</h5>
+        <h5>Analista Programador</h5>
         <div class="icons">
           <a href="https://www.linkedin.com/in/luis-zenteno-83a006220/"><i class="ri-linkedin-box-fill"></i></a>
           <a href="https://github.com/LuisZentenxx"><i class="ri-github-fill"></i></a>
@@ -39,7 +39,7 @@
       <div class="box">
         <img src="img/barb.png" alt="Imagen de Barbara">
         <h3>Bárbara Carvajal</h3>
-        <h5>Desarrollo Backend</h5>
+        <h5>Ingeniera Informática</h5>
         <div class="icons">
           <a href="https://www.linkedin.com/in/b%C3%A1rbara-carvajal-s%C3%A1ez/"><i
               class="ri-linkedin-box-fill"></i></a>
@@ -52,7 +52,7 @@
       <div class="box">
         <img src="img/martin.png" alt="Imagen de Barbara">
         <h3>Martín Farías</h3>
-        <h5>Analista Programador</h5>
+        <h5>Ingeniero Informático</h5>
         <div class="icons">
           <a href="#"><i class="ri-linkedin-box-fill"></i></a>
           <a href="#"><i class="ri-github-fill"></i></a>
@@ -64,7 +64,7 @@
       <div class="box">
         <img src="img/gyriam.png" alt="Imagen de Barbara">
         <h3>Gyriam Navia</h3>
-        <h5>Análisis & Testing</h5>
+        <h5>Analista Programadora</h5>
         <div class="icons">
           <a href="#"><i class="ri-linkedin-box-fill"></i></a>
           <a href="#"><i class="ri-github-fill"></i></a>
