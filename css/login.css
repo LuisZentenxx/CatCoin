@@ -48,6 +48,8 @@
       background-color: #533c8f;
     }
   }
+
+  
   
   @keyframes moveButton {
     0% {
@@ -108,7 +110,11 @@
       transform: translateY(0) scale(1);
     }
   }
+  
 
   .text-center h4{
     font-size: 2rem;
   }
+
+  
+  

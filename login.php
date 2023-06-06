@@ -28,8 +28,19 @@
 
 <body>
 
-  <section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
+      <ul class="nav justify-content-center custom-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="nosotros.php">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="proyecto.php">Proyecto CatCoin</a>
+        </li>
+      </ul>
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
           <div class="card text-black">
