@@ -25,11 +25,11 @@
     // Verificar si la inserción fue exitosa
     if ($resultado_insertar_gasto) {
         // Redireccionar a la página principal con un mensaje de éxito
-        header("Location: ../principal.php?mensaje=success");
+        header("Location: ../princi.php?mensaje=success");
         exit();
     } else {
         // Redireccionar a la página principal con un mensaje de error
-        header("Location: ../principal.php?mensaje=error");
+        header("Location: ../princi.php?mensaje=error");
         exit();
     }
 

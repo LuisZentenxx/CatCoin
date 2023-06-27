@@ -1,7 +1,7 @@
 <?php
     // Mostrar los gastos por categoría
     foreach ($gastosPorCategoria as $categoria => $gastos) {
-        echo "<h3>$categoria</h3>";
+        echo "<h4>$categoria</h4>";
 
         echo '<table class="table">';
         echo '<thead>';
