@@ -21,6 +21,13 @@
 </head>
 
 <body id="body">
+
+    <div class="titulo">
+        <h1 class="bienvenida">
+            Bienvenid@ <?php echo $nombre_apellido; ?>
+        </h1>
+    </div>
+
     <div class="menu__side" id="menu_side">
 
         <div class="name__page">
@@ -76,8 +83,7 @@
                     <div class="mb-3">
                         <i class="fa-solid fa-hand-holding-dollar"></i>
                         <input type="number" name="monto" id="monto" class="form-control form-control-lg"
-                            value="<?php echo $placeholder_valor; ?>" required
-                            placeholder="$0">
+                            value="<?php echo $placeholder_valor; ?>" required placeholder="$0">
                     </div>
                 </form>
             </div>
@@ -131,12 +137,52 @@
         <div class="card2" style="width: 40rem;">
             <div class="card-body">
                 <div class="col-md-6">
-                    <h4 class="text-start">Gastos por categoría</h4>
+                <h4 class="text-start">Gastos por categoría</h4>
                     <?php include 'php/gastos_categoria.php'; ?>
+                    <div class="total-gastos">
+                    <p>Total</p>
+                    <p>$<?php echo $sumaTotalGastos; ?></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <hr>
+    <div>
+    <h1>Estadísticas</h1>
+    <div class="card3" style="width: 30rem;">
+        <div class="card-body">
+            <div class="col-md-6">
+                <div id="chart_div"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Categoría', 'Valor'],
+            ['Comida Rápida', Math.random() * 100],
+            ['Ropa', Math.random() * 100],
+            ['Uber', Math.random() * 100],
+            ['Suscripciones', Math.random() * 100]
+        ]);
+
+        var options = {
+            title: 'Gastos por Categoría',
+            pieHole: 0.4
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
 
 
 

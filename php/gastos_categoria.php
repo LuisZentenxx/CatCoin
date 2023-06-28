@@ -26,8 +26,4 @@
         echo '</table>';
     }
 
-    // Mostrar la suma total de los gastos
-    echo "<h3>Suma total de gastos: $sumaTotalGastos</h3>";
-
-
 ?>
