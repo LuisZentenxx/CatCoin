@@ -26,14 +26,14 @@
 
 <body>
 
-<section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="principalFondo" class="h-100 gradient-form">
   
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
           <div class="card text-black">
             <div class="row g-0">
               <div class="col-lg-6">
-                <div class="card-body p-md-5 mx-md-4">
+              <div class="card-body p-md-5 mx-md-4 glass-form-container">
 
                   <div class="text-center">
                     <img src="img/2d_cat-removebg.png" style="width: 185px; height: 100px;" alt="logo">

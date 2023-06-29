@@ -10,6 +10,16 @@
     text-decoration: none;
   }
 
+  body{
+    overflow: hidden;
+  }
+
+  .principalFondo{
+    background-image: url(../img/fondo1.jpeg);
+    background-size: cover;
+  }
+
+  
   .form-control:focus {
     border-color: #781898; /* Cambia el color a tu elección */
     box-shadow: 0 0 0 0.2rem rgba(140, 29, 160, 0.25);

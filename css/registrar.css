@@ -1,78 +1,86 @@
-*{
-    font-family: 'Space Grotesk', sans-serif;
-    text-decoration: none; 
-    margin: 0;
-    padding: 0;
+* {
+  font-family: 'Space Grotesk', sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*background-color: hsla(0, 0%, 87%, 0.867);*/
+  background-image: url(../img/fondo1.jpeg);
+  background-size: cover;
+}
+
+.tituloPrincipal{
+  color: white;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
   }
 
-  body{
-    background-color: hsla(0, 0%, 87%, 0.867);
+  100% {
+    transform: translateX(0);
   }
+}
 
-  
+.background-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  @keyframes slideIn {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  .background-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .background-container h1 {
-    margin-top: 1.5rem;
-    margin-bottom: 10px;
-    animation: slideIn 1s ease-out;
-  }
-  
-  .background-container h4 {
-    animation: slideIn 1s ease-out;
-  }
-  
-  .form-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: rgba(118, 15, 169, 0.8);
-    backdrop-filter: blur(5px);
-    max-width: 400px;
-    width: 90%;
-    border-radius: 10px;
-  }
-  
-    
-    .btn-custom {
-      background-color: #fff;
-      color: #221145;
-      font-weight: 600;
-      padding: 10px;
-      border-radius: 50px;
-      transition: transform 0.3s ease;
-    }
-    
-    .btn-custom:hover {
-      background: #fff;
-      color:  #311d5a;
-      transform: translateX(10px);
-    }
-  
-    label{
-      color:#fff;
-      font-weight: 400;
-      
-    }
-  
-    .form-text{
-      color:#fff;
-      font-weight: 100;
-      font-style: italic;
-    }
+.background-container h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 10px;
+  animation: slideIn 1s ease-out;
+}
+
+.background-container h4 {
+  animation: slideIn 1s ease-out;
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(140, 114, 211, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+
+
+.btn-custom {
+  background-color: #fff;
+  color: #221145;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #fff;
+  color: #311d5a;
+  transform: translateX(10px);
+}
+
+label {
+  color: #fff;
+  font-weight: 400;
+
+}
+
+.form-text {
+  color: #fff;
+  font-weight: 100;
+  font-style: italic;
+}
