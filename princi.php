@@ -65,6 +65,13 @@
                 </div>
             </a>
 
+            <a href="nosotros.php">
+                <div class="option">
+                <i class="fa-solid fa-people-group"></i>
+                    <h4>Nosotros</h4>
+                </div>
+            </a>
+
             <a href="php/cerrar_sesion.php">
                 <div class="option">
                     <i class="fa-solid fa-right-from-bracket"></i>

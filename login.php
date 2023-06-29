@@ -27,18 +27,7 @@
 <body>
 
 <section class="h-100 gradient-form" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-      <ul class="nav justify-content-center custom-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.php">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="proyecto.php">Proyecto CatCoin</a>
-        </li>
-      </ul>
+  
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
           <div class="card text-black">
@@ -88,7 +77,8 @@
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4 animated-text">
                   
                   <h4 class="mb-4">TU COMPAÑERO FINANCIERO</h4>
-                  <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p class="large mb-0">¡Bienvenidos a CatCoin, tu sitio web de gestión de gastos personales! Entendemos que mantener un control efectivo de tus finanzas es esencial para alcanzar tus metas y vivir una vida financiera saludable. 
+                    Nuestro intuitivo sistema de gestión de gastos te brinda las herramientas necesarias para organizar y monitorear tus ingresos, gastos y presupuesto de manera sencilla y eficiente. Ya sea que estés ahorrando para un viaje, planificando tu futuro o simplemente buscando controlar tus finanzas diarias, CatCoin está aquí para ayudarte en cada paso del camino. ¡Únete a nuestra comunidad y comienza a tomar el control de tus finanzas hoy mismo con CatCoin!</p>
                 </div>
               </div>
             </div>

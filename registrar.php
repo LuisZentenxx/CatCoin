@@ -72,13 +72,14 @@
                 <label for="exampleInputPassword2" class="form-label">Confirma tu contraseña</label>
                 <div class="input-group">
                     <input type="password" class="form-control" id="exampleInputPassword2"
-                        aria-describedby="passwordHelp" name="confirm_contrasenia" required>
+                        aria-describedby="passwordHelp" name="confirm_contrasenia" onkeyup="checkPasswordMatch()"
+                        required>
                     <span class="input-group-text">
                         <i class="bi bi-eye-fill" id="btn-pass1"
                             onclick="togglePasswordVisibility('exampleInputPassword2', 'btn-pass1')"></i>
                     </span>
                 </div>
-                <div id="confirmPasswordHelp" class="form-text">Confirma tu contraseña ingresada anteriormente.</div>
+                <div id="confirmPasswordHelp" class="form-text"></div>
             </div>
 
 

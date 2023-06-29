@@ -13,6 +13,28 @@ function togglePasswordVisibility(inputId, iconId) {
     }
 }
 
-function redirectToAnotherPage() {
-    // Lógica para redirigir a otra página después de hacer clic en el botón "Crear Cuenta"
-}
+function togglePasswordVisibility(inputId, buttonId) {
+    var passwordInput = document.getElementById(inputId);
+    var passwordButton = document.getElementById(buttonId);
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passwordButton.classList.remove("bi-eye-fill");
+      passwordButton.classList.add("bi-eye-slash-fill");
+    } else {
+      passwordInput.type = "password";
+      passwordButton.classList.remove("bi-eye-slash-fill");
+      passwordButton.classList.add("bi-eye-fill");
+    }
+  }
+
+  function checkPasswordMatch() {
+    var password1 = document.getElementById("exampleInputPassword1").value;
+    var password2 = document.getElementById("exampleInputPassword2").value;
+    var confirmPasswordHelp = document.getElementById("confirmPasswordHelp");
+
+    if (password1 === password2) {
+      confirmPasswordHelp.textContent = "Las contraseñas coinciden.";
+    } else {
+      confirmPasswordHelp.textContent = "Las contraseñas no coinciden.";
+    }
+  }

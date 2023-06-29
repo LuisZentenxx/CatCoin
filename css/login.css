@@ -10,6 +10,11 @@
     text-decoration: none;
   }
 
+  .form-control:focus {
+    border-color: #781898; /* Cambia el color a tu elección */
+    box-shadow: 0 0 0 0.2rem rgba(140, 29, 160, 0.25);
+  }
+
   .btn-custom {
     position: relative;
     overflow: hidden;
@@ -111,7 +116,6 @@
     }
   }
   
-
   .text-center h4{
     font-size: 2rem;
   }
