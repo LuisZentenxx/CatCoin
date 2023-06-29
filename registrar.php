@@ -32,8 +32,8 @@
 <body>
 
     <div class="background-container">
-        <h1>Bienvenid@ a CatCoin!</h1>
-        <h4>Tu compañero financiero</h4>
+        <h1 class="tituloPrincipal">Bienvenid@ a CatCoin!</h1>
+        <h4 class="tituloPrincipal">Tu compañero financiero</h4>
 
         <form class="form-container needs-validation" action="php/registro_backend.php" method="POST">
 
