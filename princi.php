@@ -137,11 +137,11 @@
         <div class="card2" style="width: 40rem;">
             <div class="card-body">
                 <div class="col-md-6">
-                <h4 class="text-start">Gastos por categoría</h4>
+                    <h4 class="text-start">Gastos por categoría</h4>
                     <?php include 'php/gastos_categoria.php'; ?>
                     <div class="total-gastos">
-                    <p>Total</p>
-                    <p>$<?php echo $sumaTotalGastos; ?></p>
+                        <p>Total</p>
+                        <p>$<?php echo $sumaTotalGastos; ?></p>
                     </div>
                 </div>
             </div>
@@ -150,19 +150,21 @@
 
     <hr>
     <div>
-    <h1>Estadísticas</h1>
-    <div class="card3" style="width: 30rem;">
-        <div class="card-body">
-            <div class="col-md-6">
-                <div id="chart_div"></div>
+        <h1>Estadísticas</h1>
+        <div class="card3" style="width: 30rem;">
+            <div class="card-body">
+                <div class="col-md-6">
+                    <div id="chart_div"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
@@ -182,11 +184,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
     }
-</script>
-
-
-
-
+    </script>
     <script src="js\script.js"></script>
 
     <!-- jQuery -->

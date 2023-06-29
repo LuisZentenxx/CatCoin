@@ -24,6 +24,6 @@ const btnRedirect = document.querySelector('.btn.btn-custom1');
 // Agrega un evento de clic al botón
 btnRedirect.addEventListener('click', function() {
   // Redirecciona a la página deseada
-  window.location.href = 'registro.php';
+  window.location.href = 'registrar.php';
 });
 

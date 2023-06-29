@@ -5,25 +5,37 @@
         $nombre_apellido = $_POST['nombre_apellido'];
         $correo = $_POST['correo'];
         $contrasenia = $_POST['contrasenia'];
-        $contrasenia = hash('sha512',$contrasenia); //encriptación de contrasenia
-
-        $query = "INSERT INTO usuario (nombre_apellido, correo, contrasenia)
-                  VALUES ('$nombre_apellido', '$correo', '$contrasenia')";
-    
-        //verificar que el correo no se repita en la base de datos
-        $consulta = "SELECT * FROM usuario where correo = '$correo'";
-        $verificar_correo = mysqli_query($conexion, $consulta);
-
-        if(mysqli_num_rows($verificar_correo) >0 ){
+        $confirm_contrasenia = $_POST['confirm_contrasenia'];
+        
+        // Verificar que las contraseñas coincidan
+        if ($contrasenia !== $confirm_contrasenia) {
             echo '
                 <script>
-                    alert("Este correo ya esta registrado, intenta con otro diferente 🐱");
-                    window.location = "../registro.php";
+                    alert("Las contraseñas no coinciden, por favor inténtalo de nuevo 🐱");
+                    window.location = "../registrar.php";
                 </script>
             ';
             exit();
         }
+        
+        $contrasenia = hash('sha512', $contrasenia); // Encriptación de contraseña
 
+        $query = "INSERT INTO usuario (nombre_apellido, correo, contrasenia)
+                  VALUES ('$nombre_apellido', '$correo', '$contrasenia')";
+    
+        // Verificar que el correo no se repita en la base de datos
+        $consulta = "SELECT * FROM usuario WHERE correo = '$correo'";
+        $verificar_correo = mysqli_query($conexion, $consulta);
+
+        if(mysqli_num_rows($verificar_correo) > 0 ){
+            echo '
+                <script>
+                    alert("Este correo ya está registrado, intenta con otro diferente 🐱");
+                    window.location = "../registrar.php";
+                </script>
+            ';
+            exit();
+        }
 
         $ejecutar = mysqli_query($conexion, $query);
 
@@ -31,35 +43,16 @@
             echo '
                 <script>
                     alert("Usuario almacenado exitosamente 😸");
-                    window.location = "../login.php"
+                    window.location = "../login.php";
                 </script>
             ';
         }else{
             echo '
                 <script>
                     alert("Inténtalo de nuevo, usuario no almacenado 😿");
-                    window.location = "../login.php"
+                    window.location = "../login.php";
                 </script>
             ';
         }
-
     }
-    
-
-        /*
-        if ($ejecutar) {
-            echo "Registro exitoso";
-        } else {
-            echo "Error al registrar el usuario: " . mysqli_error($conexion);
-        }
-        */
-
-        
-  
-        /*
-        echo "Valor de nombre_apellido: " . $nombre_apellido . "<br>";
-        echo "Valores de POST: <pre>" . print_r($_POST, true) . "</pre>";
-        */
-
-       
 ?>
