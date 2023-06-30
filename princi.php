@@ -1,9 +1,8 @@
 <?php 
     include 'php/principal_backend.php'; 
-    //include 'php/actualizar_presupuesto.php'; 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -62,7 +61,7 @@
             </a>
 
             <!-- Icono Estadisticas -->
-            <a href="#">
+            <a href="graficos.php">
                 <div class="option">
                     <i class="fa-solid fa-chart-simple"></i>
                     <h4>Estadísticas</h4>
@@ -103,17 +102,16 @@
             <h4 class="text-start">Ingresar Presupuesto</h4>
 
             <!-- Formulario -->
-            <form action="php/guardar_presupuesto.php" method="POST" class="text-start">
+            <form action="php/guardar_presupuesto.php" method="POST" class="text-start" id="form-presupuesto">
                 <div class="mb-3">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
-                    <input type="number" name="monto" id="monto" class="form-control form-control-lg"
-                        value="<?php echo $placeholder_valor; ?>" required placeholder="$0">
+                    <input type="number" name="monto" id="monto" class="form-control form-control-lg" placeholder="$0" required>
                 </div>
+                <button type="submit" class="btn btn-primary">Guardar Presupuesto</button>
             </form>
-
         </div>
     </div>
-    </div>
+
 
     <!-- Contenedor Card Formulario Gastos y Categoria de Gastos -->
     <div class="card-container">
@@ -121,7 +119,7 @@
         <div class="card1" style="width: 30rem;">
             <div class="card-body">
                 <div class="col-md-6">
-                    <h4 class="text-start">Ingresar Gastos</h4>
+                    <h4 class="text-start">Ingresar Gastos  🐜</h4>
 
                     <!-- Formulario Gastos -->
                     <form action="php/guardar_gasto.php" method="POST" id="myForm">
@@ -158,7 +156,7 @@
                             <select name="categoria" id="categoria" class="form-select">
                                 <option value="1">Comida rápida</option>
                                 <option value="2">Ropa</option>
-                                <option value="3">Uber</option>
+                                <option value="3">Transporte</option>
                                 <option value="4">Suscripciones</option>
                                 <option value="5">Otro</option>
                             </select>
@@ -184,51 +182,35 @@
                         <p>$<?php echo $sumaTotalGastos; ?></p>
                     </div>
 
+
+                    <!-- Presupuesto ingresado -->
+                    <div class="presupuesto">
+                        <p>Presupuesto</p>
+                        <p>$<?php echo isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] : '0'; ?></p>
+                    </div>
+
+                    <!-- Agrega el código de diferencia aquí -->
+                    <?php
+                    // Calcular la diferencia entre el presupuesto y el total de gastos
+                    $diferencia = isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] - $sumaTotalGastos : 0;
+                    ?>
+
+                    <!-- Diferencia presupuesto - total gastos -->
+                    <div class="presupuesto">
+                        <p>Diferencia</p>
+                        <p>$<?php echo $diferencia; ?></p>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
+
 
 
     <hr>
-    <!-- Sección Estadisticas -->
-    <div>
-        <h1>Estadísticas</h1>
-        <div class="card3" style="width: 30rem;">
-            <div class="card-body">
-                <div class="col-md-6">
-                    <div id="chart_div"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Graficos Google Charts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Categoría', 'Valor'],
-            ['Comida Rápida', Math.random() * 100],
-            ['Ropa', Math.random() * 100],
-            ['Uber', Math.random() * 100],
-            ['Suscripciones', Math.random() * 100]
-        ]);
-
-        var options = {
-            title: 'Gastos por Categoría',
-            pieHole: 0.4
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-    </script>
+    
+    
+    
 
     <!-- Script Lógica -->
     <script src="js\script.js"></script>
