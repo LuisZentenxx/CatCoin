@@ -10,10 +10,6 @@
     text-decoration: none;
   }
 
-  body{
-    overflow: hidden;
-  }
-
   .principalFondo{
     background-image: url(../img/fondo1.jpeg);
     background-size: cover;

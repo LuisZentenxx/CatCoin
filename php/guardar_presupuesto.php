@@ -35,7 +35,7 @@ if ($existe_presupuesto) {
 
     if (mysqli_query($conexion, $query_insert)) {
         // Presupuesto insertado exitosamente
-        $mensaje = "Presupuesto insertado/actualizado exitosamente.";
+        $mensaje = "Presupuesto insertado exitosamente.";
     } else {
         // Error al insertar el presupuesto
         $mensaje = "Error al insertar el presupuesto: " . mysqli_error($conexion);
