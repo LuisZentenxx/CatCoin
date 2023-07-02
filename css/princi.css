@@ -35,10 +35,6 @@ body {
   }
 }
 
-
-
-
-
 .icon__menu{
     width: 50px;
     height: 100%;
@@ -177,6 +173,7 @@ a.selected{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
+  align-items: center; /* Alinea verticalmente los elementos del contenedor */
 }
 
   .card h4 {
@@ -188,15 +185,18 @@ a.selected{
   .card form {
     margin-bottom: 0;
   }
+  
   .card .mb-3 {
     margin-bottom: 1rem;
   }
 
+  
   .card input,
   .card select {
     text-align: center;
-    width: 80%;
+    width: 100%; /* Aumentar el ancho al 100% */
     height: 40px;
+    padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

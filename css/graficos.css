@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    position: relative;
+    margin-left: 20px;
+    margin-top: 4rem;
+    background-image: linear-gradient(135deg, #fbfbfb, #f9f9f9);
+    border: 1px solid #ccc;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    max-width: 600px; /* Ajusta el valor máximo de ancho según tus necesidades */
+    width: 100%; /* Hace que el card ocupe el ancho disponible */
+  }
+  
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    border-radius: 1.5rem;
+    z-index: -1;
+  }
+  
+  #chart_div {
+    width: 100%; /* Ajusta el ancho del gráfico */
+    height: 400px; /* Ajusta la altura del gráfico */
+  }
+  
+  #chart_div:hover{
+    cursor: pointer;
+  }

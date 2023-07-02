@@ -95,22 +95,53 @@
         </div>
     </div>
 
-    <!-- Card Ingreso Presupuesto -->
-    <div class="card" style="width: 30rem;">
-        <div class="card-body">
-            <div class="col-md-6"></div>
-            <h4 class="text-start">Ingresar Presupuesto</h4>
+    <div class="card-container d-flex justify-content-center">
+        <!-- Card Ingreso Presupuesto -->
+        <div class="card card2">
+            <div class="card-body">
+                <div class="col-md-6"></div>
+                <h4 class="text-start">Ingresar Presupuesto</h4>
 
-            <!-- Formulario -->
-            <form action="php/guardar_presupuesto.php" method="POST" class="text-start" id="form-presupuesto">
-                <div class="mb-3">
-                    <i class="fa-solid fa-hand-holding-dollar"></i>
-                    <input type="number" name="monto" id="monto" class="form-control form-control-lg" placeholder="$0" required>
+                <!-- Formulario -->
+                <form action="php/guardar_presupuesto.php" method="POST" class="text-start" id="form-presupuesto">
+                    <div class="mb-3">
+                        <input type="number" name="monto" id="monto" class="form-control form-control-lg custom-input"
+                            placeholder="$0" required>
+                    </div>
+                    <input class="btn btn-primary custom-button" type="submit" name="submit"
+                        value="Guardar Presupuesto">
+                </form>
+            </div>
+        </div>
+
+        <!-- Card Estado de cuentas -->
+        <div class="card card2">
+            <div class="card-body">
+                <div class="col-md-6"></div>
+                <h4 class="text-start">Estado de tus Cuentas</h4>
+
+                <!-- Presupuesto ingresado -->
+                <div class="presupuesto">
+                    <p>Presupuesto</p>
+                    <p>$<?php echo isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] : '0'; ?></p>
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar Presupuesto</button>
-            </form>
+
+                <!-- Agrega el código de diferencia aquí -->
+                <?php
+      // Calcular la diferencia entre el presupuesto y el total de gastos
+      $diferencia = isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] - $sumaTotalGastos : 0;
+      ?>
+
+                <!-- Diferencia presupuesto - total gastos -->
+                <div class="presupuesto">
+                    <p>Diferencia</p>
+                    <p>$<?php echo $diferencia; ?></p>
+                </div>
+            </div>
         </div>
     </div>
+
+
 
 
     <!-- Contenedor Card Formulario Gastos y Categoria de Gastos -->
@@ -119,7 +150,7 @@
         <div class="card1" style="width: 30rem;">
             <div class="card-body">
                 <div class="col-md-6">
-                    <h4 class="text-start">Ingresar Gastos  🐜</h4>
+                    <h4 class="text-start">Ingresar Gastos 🐜</h4>
 
                     <!-- Formulario Gastos -->
                     <form action="php/guardar_gasto.php" method="POST" id="myForm">
@@ -182,51 +213,28 @@
                         <p>$<?php echo $sumaTotalGastos; ?></p>
                     </div>
 
-
-                    <!-- Presupuesto ingresado -->
-                    <div class="presupuesto">
-                        <p>Presupuesto</p>
-                        <p>$<?php echo isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] : '0'; ?></p>
-                    </div>
-
-                    <!-- Agrega el código de diferencia aquí -->
-                    <?php
-                    // Calcular la diferencia entre el presupuesto y el total de gastos
-                    $diferencia = isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] - $sumaTotalGastos : 0;
-                    ?>
-
-                    <!-- Diferencia presupuesto - total gastos -->
-                    <div class="presupuesto">
-                        <p>Diferencia</p>
-                        <p>$<?php echo $diferencia; ?></p>
-                    </div>
-
                 </div>
             </div>
         </div>
 
 
 
-    <hr>
-    
-    
-    
+        <!-- Script Lógica -->
+        <script src="js\script.js"></script>
 
-    <!-- Script Lógica -->
-    <script src="js\script.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 
-    <!-- Popper.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+        </script>
 
 </body>
 
