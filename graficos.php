@@ -28,7 +28,7 @@
         <h1>Estadísticas</h1>
     </div>
 
-
+     <!-- Card gráficos -->
     <div class="card">
         <div class="card-body">
             <div id="chart_div"></div>

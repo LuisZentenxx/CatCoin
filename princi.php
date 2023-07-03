@@ -8,7 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titulo e icono de la página -->
     <title>CatCoin</title>
+    <link rel="icon" type="image/png" href="img\2d_cat-removebg.png">
 
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,7 +118,7 @@
         </div>
 
         <!-- Card Estado de cuentas -->
-        <div class="card card2">
+        <div class="card card4">
             <div class="card-body">
                 <div class="col-md-6"></div>
                 <h4 class="text-start">Estado de tus Cuentas</h4>
