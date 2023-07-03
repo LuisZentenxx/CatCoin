@@ -22,10 +22,14 @@
         rel="stylesheet">
 
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css\principal.css">
+    <link rel="stylesheet" href="css\style_principal.css">
 
     <!-- Iconos Font Awesome -->
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body id="body">
@@ -99,9 +103,9 @@
         </div>
     </div>
 
-    <div class="card-container d-flex justify-content-center" style="background-color: blue;">
+    <div class="card-container d-flex justify-content-center">
         <!-- Card Ingreso Presupuesto -->
-        <div class="card card2">
+        <div class="card card2" style="min-width: 250px; max-height:200px;">
             <div class="card-body">
                 <div class="col-md-6"></div>
                 <h4 class="text-start">Ingresar Presupuesto</h4>
@@ -118,66 +122,113 @@
             </div>
         </div>
 
-<!-- Card Estado de cuentas -->
-<div class="card card4">
-    <div class="card-body">
-        <div class="col-md-6"></div>
-        <h4 class="text-start">Estado de tus Cuentas</h4>
+        <!-- Card Estado de cuentas -->
+        <div class="card card4" style="min-width: 250px; max-height:200px;">
+            <div class="card-body">
+                <div class="col-md-6"></div>
+                <h4 class="text-start">Estado de tus Cuentas</h4>
 
-        <!-- Presupuesto ingresado -->
-        <div class="presupuesto">
-            <p class="titulos">Presupuesto</p>
-            <p class="valor">$<?php echo isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] : '0'; ?></p>
-        </div>
+                <!-- Presupuesto ingresado -->
+                <div class="presupuesto">
+                    <p class="titulos">Presupuesto</p>
+                    <p class="valor">$<?php echo isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] : '0'; ?>
+                    </p>
+                </div>
 
-        <?php
+                <?php
         // Calcular la diferencia entre el presupuesto y el total de gastos
         $diferencia = isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] - $sumaTotalGastos : 0;
         ?>
 
-        <!-- Diferencia presupuesto - total gastos -->
-        <div class="presupuesto">
-            <p class="titulos">Saldo Restante</p>
-            <?php if (isset($_SESSION['presupuesto'])) : ?>
-                <?php if ($diferencia > ($_SESSION['presupuesto'] * 0.5)) : ?>
+                <!-- Diferencia presupuesto - total gastos -->
+                <div class="presupuesto">
+                    <p class="titulos">Saldo Restante</p>
+                    <?php if (isset($_SESSION['presupuesto'])) : ?>
+                    <?php if ($diferencia > ($_SESSION['presupuesto'] * 0.5)) : ?>
                     <p class="valor1" style="color: green;">$<?php echo $diferencia; ?></p>
-                <?php elseif ($diferencia > ($_SESSION['presupuesto'] * 0.3)) : ?>
+                    <?php elseif ($diferencia > ($_SESSION['presupuesto'] * 0.3)) : ?>
                     <p class="valor1" style="color: orange;">$<?php echo $diferencia; ?></p>
-                <?php else : ?>
+                    <?php else : ?>
                     <p class="valor1" style="color: red;">$<?php echo $diferencia; ?></p>
-                <?php endif; ?>
-            <?php else : ?>
-                <p class="valor1">$<?php echo $diferencia; ?></p>
-            <?php endif; ?>
+                    <?php endif; ?>
+                    <?php else : ?>
+                    <p class="valor1">$<?php echo $diferencia; ?></p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
+        <style>
+        .presupuesto {
+            margin-bottom: 10px;
+        }
+
+        .titulos {
+            font-weight: bold;
+        }
+
+        .valor {
+            font-weight: bold;
+            color: green;
+        }
+
+        .valor1 {
+            font-weight: bold;
+        }
+        </style>
+
+        <div class="card card4" style="min-width: 250px; max-width: 300px; max-height: 200px;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h4 class="text-center mb-4">Alertas</h4>
+                <p id="mensaje" class="text-center" style="word-wrap: break-word;"></p>
+            </div>
+        </div>
+
+
     </div>
-</div>
-<style>
-.presupuesto {
-    margin-bottom: 10px;
-}
+    <style>
+    #mensaje {
+        color: black;
+        font-weight: bold;
+    }
+    </style>
 
-.titulos {
-    font-weight: bold;
-}
+    <!-- Notificación -->
+    <script>
+    var presupuesto = <?php echo isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] : 0; ?>;
+    var sumaTotalGastos = <?php echo $sumaTotalGastos; ?>;
+    var mensaje = "";
+    var imagenSrc = "";
 
-.valor {
-    font-weight: bold;
-    color: green;
-}
+    if (sumaTotalGastos > presupuesto) {
+        mensaje = "Se ha superado el presupuesto!";
 
-.valor1 {
-    font-weight: bold;
-}
-</style>
+    } else if (sumaTotalGastos === presupuesto) {
+        mensaje = "Malas noticias...Te has quedado sin ahorros!";
 
-    </div>
+    } else if (sumaTotalGastos > 0.5 * presupuesto && sumaTotalGastos < presupuesto) {
+        mensaje = "Advertencia! Tus gastos están poniendo en riesgo tu presupuesto.";
 
+    } else if (sumaTotalGastos === 0.5 * presupuesto) {
+        mensaje = "Atento! Es hora revisar tus gastos.";
+
+    } else if (sumaTotalGastos > 0.3 * presupuesto && sumaTotalGastos <= 0.5 * presupuesto) {
+        mensaje = "Felicitaciones, estás ahorrando: tus gastos están por debajo del 50% de tu presupuesto.";
+
+    } else {
+        mensaje = "Tomate un relajo, tus ahorros están mejor que nunca!"
+    }
+
+    // Selecciona los elementos donde deseas mostrar el mensaje
+    var elementoMensaje = document.getElementById("mensaje");
+
+    // Asigna el mensaje y la imagen a los elementos correspondientes
+    elementoMensaje.innerHTML = mensaje;
+    </script>
 
 
 
     <!-- Contenedor Card Formulario Gastos y Categoria de Gastos -->
-    <div class="card-container" style="background-color: red;">
+    <div class="card-container">
         <!-- Card Gastos -->
         <div class="card1" style="width: 30rem;">
             <div class="card-body">
@@ -258,90 +309,182 @@
             <h1>Estadísticas</h1>
         </div>
 
-        <!-- Card gráficos -->
+        <!-- Card gráficos por categoria -->
         <div class="card">
             <div class="card-body">
                 <div id="chart_div"></div>
             </div>
         </div>
-    </div>
+
+        <hr>
+        <footer>
+            <div class="container-footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                    <i class="fa-solid fa-cat"></i>
+                    </div>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Productos</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Todos los derechos reservados &copy; 2023</p>
+                </div>
+            </div>
+        </footer>
 
 
-    <!-- Scripts para cargar Google Charts y dibujar el gráfico -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Categoría');
-        data.addColumn('number', 'Valor');
+        <!-- Gráfico Gastos por categoría -->
 
-        <?php
-        while ($fila = $resultado->fetch_assoc()) {
+        <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Categoría');
+            data.addColumn('number', 'Valor');
+
+            <?php
+        while ($fila = $resultado1->fetch_assoc()) {
             echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
         }
         ?>
 
-        var options = {
-            title: 'Gastos por Categoría',
-            titleTextStyle: {
-                fontSize: 20 // Tamaño de fuente del título
-            },
-            pieHole: 0.4,
-            is3D: true,
-            backgroundColor: 'transparent',
-            chartArea: {
-                left: 50, // Margen izquierdo del área del gráfico
-                top: 50, // Margen superior del área del gráfico
-                width: '80%', // Ancho del área del gráfico
-                height: '80%' // Altura del área del gráfico
-            },
-            legend: {
-                position: 'right', // Posición de la leyenda (derecha)
-                textStyle: {
-                    fontSize: 14, // Tamaño de fuente de la leyenda
+            var options = {
+                title: 'Gastos por Categoría',
+                titleTextStyle: {
+                    fontSize: 20 // Tamaño de fuente del título
+                },
+                pieHole: 0.4,
+                is3D: true,
+                backgroundColor: 'transparent',
+                chartArea: {
+                    left: 50, // Margen izquierdo del área del gráfico
+                    top: 50, // Margen superior del área del gráfico
+                    width: '80%', // Ancho del área del gráfico
+                    height: '80%' // Altura del área del gráfico
+                },
+                legend: {
+                    position: 'right', // Posición de la leyenda (derecha)
+                    textStyle: {
+                        fontSize: 14, // Tamaño de fuente de la leyenda
+                    }
+                },
+                slices: {
+                    0: {
+                        color: '#ff6384'
+                    }, // Color personalizado para la primera categoría
+                    1: {
+                        color: '#36a2eb'
+                    }, // Color personalizado para la segunda categoría
+                    2: {
+                        color: '#ffce56'
+                    } // Color personalizado para la tercera categoría
                 }
-            },
-            slices: {
-                0: {
-                    color: '#ff6384'
-                }, // Color personalizado para la primera categoría
-                1: {
-                    color: '#36a2eb'
-                }, // Color personalizado para la segunda categoría
-                2: {
-                    color: '#ffce56'
-                } // Color personalizado para la tercera categoría
-            }
-        };
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-    </script>
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+        </script>
 
 
+        <!-- Gráfico Gastos por categoría -->
 
-    <!-- Script Lógica -->
-    <script src="js\principal.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Categoría');
+            data.addColumn('number', 'Valor');
 
-    <!-- Popper.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+            <?php
+        while ($fila = $resultado2->fetch_assoc()) {
+            echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
+        }
+        ?>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+            var options = {
+                title: 'Estadisticas de gastos',
+                titleTextStyle: {
+                    fontSize: 20 // Tamaño de fuente del título
+                },
+                backgroundColor: 'transparent',
+                chartArea: {
+                    left: 50, // Margen izquierdo del área del gráfico
+                    top: 50, // Margen superior del área del gráfico
+                    width: '80%', // Ancho del área del gráfico
+                    height: '80%' // Altura del área del gráfico
+                },
+                legend: {
+                    position: 'right', // Posición de la leyenda (derecha)
+                    textStyle: {
+                        fontSize: 14, // Tamaño de fuente de la leyenda
+                    }
+                },
+                bars: 'vertical', // Display bars vertically
+                hAxis: {
+                    title: 'Valor', // X-axis title
+                    titleTextStyle: {
+                        fontSize: 16 // Tamaño de fuente del título del eje X
+                    }
+                },
+                vAxis: {
+                    title: 'Categoría', // Y-axis title
+                    titleTextStyle: {
+                        fontSize: 16 // Tamaño de fuente del título del eje Y
+                    }
+                },
+                colors: ['#36a2eb'] // Set custom colors for each category
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div_valor'));
+            chart.draw(data, options);
+        }
+        </script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
-    </script>
+
+
+
+        <!-- Script Lógica -->
+        <script src="js\principal.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+        </script>
 
 </body>
 

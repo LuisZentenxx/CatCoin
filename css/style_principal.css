@@ -219,7 +219,6 @@ a.selected{
     border-color: #781898;
     box-shadow: 0 0 0 0.2rem rgba(140, 29, 160, 0.25);
   }
-  
   .card1 {
     margin-left: 20px;
     margin-top: 4rem;
@@ -369,4 +368,79 @@ a.selected{
       display: flex;
       justify-content: center;
     }
-    
+
+/* Estilos generales del footer */
+footer {
+  margin-top: 1rem;
+  background-color: #760fa9;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 100px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-social ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilos adicionales */
+.footer-logo img {
+  display: block;
+  max-width: 100%;
+}
+
+.footer-links ul li a:hover,
+.footer-social ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}

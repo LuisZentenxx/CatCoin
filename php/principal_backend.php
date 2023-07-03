@@ -58,14 +58,24 @@ session_start();
 
     // Seccion de Estadisticas
     
-    $consulta = "SELECT categoria.nombre, COUNT(gasto.id_categoria) AS total_gastos
+    $consulta1 = "SELECT categoria.nombre, COUNT(gasto.id_categoria) AS total_gastos
                     FROM categoria
                     LEFT JOIN gasto ON categoria.id_categoria = gasto.id_categoria
                     WHERE gasto.id_usuario = $usuario_id
                     GROUP BY categoria.id_categoria";
 
-    $resultado = $conexion->query($consulta);
+    $resultado1 = $conexion->query($consulta1);
+
+    $consulta2 = "SELECT categoria.nombre, SUM(gasto.valor) AS total_gastos
+    FROM categoria
+    LEFT JOIN gasto ON categoria.id_categoria = gasto.id_categoria
+    WHERE gasto.id_usuario = $usuario_id
+    GROUP BY categoria.id_categoria";
+
+$resultado2 = $conexion->query($consulta2);
+
 
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
+
 ?>
