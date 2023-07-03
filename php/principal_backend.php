@@ -56,6 +56,16 @@ session_start();
         $sumaTotalGastos += $valor;
     }
 
+    // Seccion de Estadisticas
+    
+    $consulta = "SELECT categoria.nombre, COUNT(gasto.id_categoria) AS total_gastos
+                    FROM categoria
+                    LEFT JOIN gasto ON categoria.id_categoria = gasto.id_categoria
+                    WHERE gasto.id_usuario = $usuario_id
+                    GROUP BY categoria.id_categoria";
+
+    $resultado = $conexion->query($consulta);
+
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
 ?>

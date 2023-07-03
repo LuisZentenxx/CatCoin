@@ -9,7 +9,7 @@
     $fecha = $_POST['fecha'];
     $categoria = $_POST['categoria'];
 
-    // Obtener el ID del usuario desde la sesión (asegúrate de tener la sesión iniciada correctamente)
+    // Obtener el ID del usuario desde la sesión
     session_start();
     $usuario = $_SESSION['usuario'];
 
@@ -25,11 +25,11 @@
     // Verificar si la inserción fue exitosa
     if ($resultado_insertar_gasto) {
         // Redireccionar a la página principal con un mensaje de éxito
-        header("Location: ../princi.php?mensaje=success");
+        header("Location: ../principal.php?mensaje=success");
         exit();
     } else {
         // Redireccionar a la página principal con un mensaje de error
-        header("Location: ../princi.php?mensaje=error");
+        header("Location: ../principal.php?mensaje=error");
         exit();
     }
 

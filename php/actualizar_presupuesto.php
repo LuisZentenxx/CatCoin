@@ -1,7 +1,7 @@
 <?php
-    include 'conexion_db.php'; // Asegúrate de proporcionar la ruta correcta al archivo de conexión
+    include 'conexion_db.php';
 
-    // Obtener el ID del usuario desde la sesión (asegúrate de tener la sesión iniciada correctamente)
+    // Obtener el ID del usuario desde la sesión
     session_start();
     $usuario = $_SESSION['usuario'];
 

@@ -1,6 +1,7 @@
 <?php 
-    include 'php/principal_backend.php'; 
+    include 'php/principal_backend.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +22,7 @@
         rel="stylesheet">
 
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css\princi.css">
+    <link rel="stylesheet" href="css\principal.css">
 
     <!-- Iconos Font Awesome -->
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
@@ -98,7 +99,7 @@
         </div>
     </div>
 
-    <div class="card-container d-flex justify-content-center">
+    <div class="card-container d-flex justify-content-center" style="background-color: blue;">
         <!-- Card Ingreso Presupuesto -->
         <div class="card card2">
             <div class="card-body">
@@ -148,7 +149,7 @@
 
 
     <!-- Contenedor Card Formulario Gastos y Categoria de Gastos -->
-    <div class="card-container">
+    <div class="card-container" style="background-color: red;">
         <!-- Card Gastos -->
         <div class="card1" style="width: 30rem;">
             <div class="card-body">
@@ -219,11 +220,84 @@
                 </div>
             </div>
         </div>
+    </div>   
+
+        <hr>
+
+        <div class="estadisticas">
+            <!-- Sección Estadisticas -->
+            <div class="title">
+                <h1>Estadísticas</h1>
+            </div>
+
+            <!-- Card gráficos -->
+            <div class="card">
+                <div class="card-body">
+                    <div id="chart_div"></div>
+                </div>
+            </div>
+
+            <!-- Scripts para cargar Google Charts y dibujar el gráfico -->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Categoría');
+                data.addColumn('number', 'Valor');
+
+                <?php
+        while ($fila = $resultado->fetch_assoc()) {
+            echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
+        }
+        ?>
+
+                var options = {
+                    title: 'Gastos por Categoría',
+                    titleTextStyle: {
+                        fontSize: 20 // Tamaño de fuente del título
+                    },
+                    pieHole: 0.4,
+                    is3D: true,
+                    backgroundColor: 'transparent',
+                    chartArea: {
+                        left: 50, // Margen izquierdo del área del gráfico
+                        top: 50, // Margen superior del área del gráfico
+                        width: '80%', // Ancho del área del gráfico
+                        height: '80%' // Altura del área del gráfico
+                    },
+                    legend: {
+                        position: 'right', // Posición de la leyenda (derecha)
+                        textStyle: {
+                            fontSize: 14, // Tamaño de fuente de la leyenda
+                        }
+                    },
+                    slices: {
+                        0: {
+                            color: '#ff6384'
+                        }, // Color personalizado para la primera categoría
+                        1: {
+                            color: '#36a2eb'
+                        }, // Color personalizado para la segunda categoría
+                        2: {
+                            color: '#ffce56'
+                        } // Color personalizado para la tercera categoría
+                    }
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+            </script>
 
 
 
         <!-- Script Lógica -->
-        <script src="js\script.js"></script>
+        <script src="js\principal.js"></script>
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
