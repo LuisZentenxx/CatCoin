@@ -168,6 +168,7 @@ a.selected{
   justify-content: center;
   padding-bottom: 2rem;
 }
+
 .card {
   position: relative; /* Agrega esta propiedad para posicionar el pseudo-elemento */
   margin-left: 20px;
@@ -354,39 +355,18 @@ a.selected{
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
+    .custom-hr {
+      border: 1px solid #ccc;
       margin: 20px 0;
     }
     
-    .estadisticas {
-      margin-top: 40px;
-    }
-    
-    .estadisticas .title {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .estadisticas .title h1 {
-      font-size: 24px;
-    }
-    
-    .estadisticas .card {
-      margin-top: 20px;
-      background-color: #fff;
+    .card {
       border: 1px solid #ccc;
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
     }
-    
-    .estadisticas .card .card-body {
-      padding: 1rem;
-    }
-    
-    .estadisticas #chart_div {
-      width: 100%;
-      height: 300px; /* Ajusta la altura según tus necesidades */
+
+    .title h1{
+      display: flex;
+      justify-content: center;
     }
     

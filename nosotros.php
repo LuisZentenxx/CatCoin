@@ -37,7 +37,7 @@
             <div class="box">
                 <img src="img/luis.png" alt="Imagen de Barbara">
                 <h3>Luis Zenteno</h3>
-                <h5>Analista Programador</h5>
+                <h5>Front End</h5>
                 <!-- Iconos RRSS -->
                 <div class="icons">
                     <a href="https://www.linkedin.com/in/luis-zenteno-83a006220/"><i
@@ -51,7 +51,7 @@
             <div class="box">
                 <img src="img/barb.png" alt="Imagen de Barbara">
                 <h3>Bárbara Carvajal</h3>
-                <h5>Ingeniera Informática</h5>
+                <h5>BackEnd</h5>
                 <!-- Iconos RRSS -->
                 <div class="icons">
                     <a href="https://www.linkedin.com/in/b%C3%A1rbara-carvajal-s%C3%A1ez/"><i
@@ -65,7 +65,7 @@
             <div class="box">
                 <img src="img/martin.png" alt="Imagen de Barbara">
                 <h3>Martín Farías</h3>
-                <h5>Ingeniero Informático</h5>
+                <h5>Testing</h5>
                 <!-- Iconos RRSS -->
                 <div class="icons">
                     <a href="#"><i class="ri-linkedin-box-fill"></i></a>
@@ -78,7 +78,7 @@
             <div class="box">
                 <img src="img/gyriam.png" alt="Imagen de Barbara">
                 <h3>Gyriam Navia</h3>
-                <h5>Analista Programadora</h5>
+                <h5>Testing</h5>
                 <!-- Iconos RRSS -->
                 <div class="icons">
                     <a href="#"><i class="ri-linkedin-box-fill"></i></a>
