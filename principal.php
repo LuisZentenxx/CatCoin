@@ -58,15 +58,14 @@
         <div class="options__menu">
 
             <!-- Icono abrir menú -->
-            <a href="usuario.php" class="selected">
+            <a href="#" class="selected">
                 <div class="option">
                     <i class="fa-solid fa-arrow-right" id="btn_open"></i>
                 </div>
             </a>
-            
 
             <!-- Icono y Nombre Usuario -->
-            <a href="#">
+            <a href="usuario.php">
                 <div class="option">
                     <i class="fa-solid fa-user" title="Usuario"></i>
                     <h4><?php echo $nombre_apellido; ?></h4>
