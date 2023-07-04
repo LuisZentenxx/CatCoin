@@ -63,6 +63,7 @@
                     <i class="fa-solid fa-arrow-right" id="btn_open"></i>
                 </div>
             </a>
+            
 
             <!-- Icono y Nombre Usuario -->
             <a href="#">
