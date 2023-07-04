@@ -1,6 +1,7 @@
 <?php
-session_start();
 include 'php/conexion_db.php';
+session_start();
+
 
 // Obtener el ID del usuario desde la sesión
 $usuario = $_SESSION['usuario'];
@@ -89,7 +90,6 @@ if (isset($_POST['submit'])) {
 <body>
 
 
-
     <div class="container">
         <h1 class="mt-5">Editar usuario</h1>
         <div class="mb-3">
@@ -122,6 +122,8 @@ if (isset($_POST['submit'])) {
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary">Guardar cambios</button>
+            <a href="php/eliminar_cuenta.php" class="btn btn-danger">Eliminar cuenta</a>
+
         </form>
     </div>
 
