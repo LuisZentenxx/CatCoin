@@ -2,7 +2,6 @@
 include 'php/conexion_db.php';
 session_start();
 
-
 // Obtener el ID del usuario desde la sesión
 $usuario = $_SESSION['usuario'];
 
@@ -21,7 +20,6 @@ if (mysqli_num_rows($resultadoUsuario) > 0) {
 
 if (isset($_POST['submit'])) {
     $nombre_apellido = $_POST['nombre_apellido'];
-    $correo = $_POST['correo'];
 
     // Verificar si se desea actualizar la contraseña
     if (!empty($_POST['contrasenia']) && !empty($_POST['confirm_contrasenia'])) {
@@ -56,8 +54,8 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Actualizar el nombre y el correo electrónico en la base de datos
-    $query = "UPDATE usuario SET nombre_apellido = '$nombre_apellido', correo = '$correo' WHERE id_usuario = '$usuario_id'";
+    // Actualizar el nombre en la base de datos
+    $query = "UPDATE usuario SET nombre_apellido = '$nombre_apellido' WHERE id_usuario = '$usuario_id'";
     $ejecutar = mysqli_query($conexion, $query);
 
     if ($ejecutar) {
@@ -126,12 +124,6 @@ if (isset($_POST['submit'])) {
                 <label for="nombre_apellido" class="form-label">Nombre y Apellido:</label>
                 <input type="text" class="form-control" name="nombre_apellido"
                     value="<?php echo $usuario['nombre_apellido']; ?>">
-                <a href="#" class="edit-icon">&#9998;</a>
-            </div>
-
-            <div class="mb-3">
-                <label for="correo" class="form-label">Correo electrónico:</label>
-                <input type="email" class="form-control" name="correo" value="<?php echo $usuario['correo']; ?>">
                 <a href="#" class="edit-icon">&#9998;</a>
             </div>
 
