@@ -30,6 +30,10 @@
     <!-- Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
 </head>
 
 <body id="body">
@@ -316,6 +320,21 @@
             </div>
         </div>
 
+        <!--Consejos-->
+        <div class="title">
+            <h1>CatCoin te aconseja 💡</h1>
+        </div>
+        <div class="slider-container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        </div>
+
+
+        <!--Footer-->
         <hr>
         <footer>
             <div class="container-footer">
@@ -465,12 +484,12 @@
         }
         </script>
 
-
-
-
+        
+        
 
         <!-- Script Lógica -->
         <script src="js\principal.js"></script>
+        <script src="js\consejos.js"></script>
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -481,6 +500,8 @@
         <!-- Bootstrap JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
+        <!-- script de Swiper -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
