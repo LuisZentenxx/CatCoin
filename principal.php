@@ -65,7 +65,7 @@
             </a>
 
             <!-- Icono y Nombre Usuario -->
-            <a href="#">
+            <a href="usuario.php">
                 <div class="option">
                     <i class="fa-solid fa-user" title="Usuario"></i>
                     <h4><?php echo $nombre_apellido; ?></h4>
@@ -130,7 +130,7 @@
         <div class="card card4" style="min-width: 250px; max-height:200px;">
             <div class="card-body">
                 <div class="col-md-6"></div>
-                <h4 class="text-start">Estado de tus Cuentas</h4>
+                <h4 class="text-start">Estado de tus Cuentas 💰</h4>
 
                 <!-- Presupuesto ingresado -->
                 <div class="presupuesto">
@@ -182,7 +182,7 @@
 
         <div class="card card4" style="min-width: 250px; max-width: 300px; max-height: 200px;">
             <div class="card-body d-flex flex-column align-items-center">
-                <h4 class="text-center mb-4">Alertas</h4>
+                <h4 class="text-center mb-4">Alertas 🚨</h4>
                 <p id="mensaje" class="text-center" style="word-wrap: break-word;"></p>
             </div>
         </div>
@@ -490,6 +490,7 @@
         <!-- Script Lógica -->
         <script src="js\principal.js"></script>
         <script src="js\consejos.js"></script>
+        
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
