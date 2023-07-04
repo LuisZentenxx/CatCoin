@@ -1,0 +1,52 @@
+*{
+    font-family: 'Space Grotesk', sans-serif;
+    text-decoration: none;
+  }
+
+  /* Estilos generales */
+.container {
+    max-width: 800px;
+    margin: 0,auto;
+    padding: 15px;
+  }
+
+  .card2 {
+    margin-bottom: 2rem;
+    background-image: linear-gradient(135deg, #fbfbfb, #f9f9f9);
+    border: 1px solid #ccc;
+    border-radius: 1.2rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 700px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto;
+    position: relative; /* Agrega posición relativa al card */
+  }
+  
+  h2{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  .mb-3 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos para los enlaces de edición */
+  .edit-icon {
+    color: #781898;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  
+  
+  .btn-custom{
+    border-radius: 1.5rem;
+    padding: 11px;
+    color: #fff;
+    font-weight: 500;
+    background-color: #781898;
+  }
+  
+  .btn-custom:hover{
+    color: #fff;
+  }

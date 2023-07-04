@@ -446,14 +446,3 @@ footer {
 }
 
 
-.slider-container {
-  position: relative;
-}
-
-.swiper-pagination {
-  position: absolute;
-  bottom: 10px; /* Ajusta la posición vertical según tus necesidades */
-  left: 0;
-  width: 100%;
-  text-align: center;
-}

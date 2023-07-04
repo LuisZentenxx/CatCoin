@@ -41,8 +41,7 @@
 
 <body>
     <!-- Principal-->
-    <section class="principalFondo" class="h-100 gradient-form">
-
+    <div class="principalFondo vh-100" style="overflow: hidden;">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
                 <div class="card text-black">
@@ -118,8 +117,7 @@
                 </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

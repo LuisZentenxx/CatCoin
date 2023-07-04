@@ -29,11 +29,6 @@
 
     <!-- Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-
 </head>
 
 <body id="body">
@@ -65,7 +60,7 @@
             </a>
 
             <!-- Icono y Nombre Usuario -->
-            <a href="usuario.php">
+            <a href="usuarios.php">
                 <div class="option">
                     <i class="fa-solid fa-user" title="Usuario"></i>
                     <h4><?php echo $nombre_apellido; ?></h4>
@@ -139,6 +134,7 @@
                     </p>
                 </div>
 
+
                 <?php
         // Calcular la diferencia entre el presupuesto y el total de gastos
         $diferencia = isset($_SESSION['presupuesto']) ? $_SESSION['presupuesto'] - $sumaTotalGastos : 0;
@@ -186,7 +182,7 @@
                 <p id="mensaje" class="text-center" style="word-wrap: break-word;"></p>
             </div>
         </div>
-    
+
 
     </div>
     <style>
@@ -316,31 +312,23 @@
         <!-- Card gráficos por categoria -->
         <div class="card">
             <div class="card-body">
+                <div id="chart_div_valor"></div>
+            </div>
+        </div>
+
+        <!-- Card gráficos por categoria -->
+        <div class="card">
+            <div class="card-body">
                 <div id="chart_div"></div>
             </div>
         </div>
-
-        <!--Consejos-->
-        <div class="title">
-            <h1>CatCoin te aconseja 💡</h1>
-        </div>
-        <div class="slider-container">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-            <!-- Slides -->
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        </div>
-
-
         <!--Footer-->
         <hr>
         <footer>
             <div class="container-footer">
                 <div class="footer-content">
                     <div class="footer-logo">
-                    <i class="fa-solid fa-cat"></i>
+                        <i class="fa-solid fa-cat"></i>
                     </div>
                     <div class="footer-links">
                         <ul>
@@ -416,6 +404,12 @@
                     }, // Color personalizado para la segunda categoría
                     2: {
                         color: '#ffce56'
+                    },
+                    3: {
+                        color: '#4bc0c0'
+                    },
+                    4: {
+                        color: '#9966ff'
                     } // Color personalizado para la tercera categoría
                 }
             };
@@ -425,10 +419,7 @@
         }
         </script>
 
-
-        <!-- Gráfico Gastos por categoría -->
-
-        <script type="text/javascript">
+        <script>
         google.charts.load('current', {
             'packages': ['corechart']
         });
@@ -440,16 +431,17 @@
             data.addColumn('number', 'Valor');
 
             <?php
-        while ($fila = $resultado2->fetch_assoc()) {
-            echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
-        }
-        ?>
+  while ($fila = $resultado2->fetch_assoc()) {
+    echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
+  }
+  ?>
 
             var options = {
-                title: 'Estadisticas de gastos',
+                title: 'Gráfico de gastos',
                 titleTextStyle: {
                     fontSize: 20 // Tamaño de fuente del título
                 },
+                is3D: true,
                 backgroundColor: 'transparent',
                 chartArea: {
                     left: 50, // Margen izquierdo del área del gráfico
@@ -463,34 +455,19 @@
                         fontSize: 14, // Tamaño de fuente de la leyenda
                     }
                 },
-                bars: 'vertical', // Display bars vertically
-                hAxis: {
-                    title: 'Valor', // X-axis title
-                    titleTextStyle: {
-                        fontSize: 16 // Tamaño de fuente del título del eje X
-                    }
-                },
-                vAxis: {
-                    title: 'Categoría', // Y-axis title
-                    titleTextStyle: {
-                        fontSize: 16 // Tamaño de fuente del título del eje Y
-                    }
-                },
-                colors: ['#36a2eb'] // Set custom colors for each category
+                pieSliceText: 'percentage', // Muestra el porcentaje de cada sector
+                colors: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40', '#800000',
+                    '#ff5733'
+                ] // Colores personalizados para cada sector
             };
 
-            var chart = new google.visualization.BarChart(document.getElementById('chart_div_valor'));
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div_valor'));
             chart.draw(data, options);
         }
         </script>
 
-        
-        
-
-        <!-- Script Lógica -->
         <script src="js\principal.js"></script>
         <script src="js\consejos.js"></script>
-        
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -504,7 +481,8 @@
         <!-- script de Swiper -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
         </script>
 
