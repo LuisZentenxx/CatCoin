@@ -186,7 +186,7 @@
                 <p id="mensaje" class="text-center" style="word-wrap: break-word;"></p>
             </div>
         </div>
-
+    
 
     </div>
     <style>
