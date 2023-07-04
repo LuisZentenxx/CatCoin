@@ -369,11 +369,14 @@ a.selected{
       justify-content: center;
     }
 
+ 
+
 /* Estilos generales del footer */
 footer {
   margin-top: 1rem;
+  height: 90px;
+  padding-top: 0.4rem;
   background-color: #760fa9;
-  padding: 20px 0;
   color: #fff;
 }
 

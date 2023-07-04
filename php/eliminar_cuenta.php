@@ -15,11 +15,19 @@ if (!$consulta_usuario_id) {
 $row_id = mysqli_fetch_assoc($consulta_usuario_id);
 $usuario_id = $row_id['id_usuario'];
 
-// Actualizar las tablas relacionadas para establecer 'id_usuario' en NULL
-$query = "UPDATE gasto SET id_usuario = NULL WHERE id_usuario = '$usuario_id'";
+// Eliminar los registros relacionados en la tabla 'gasto'
+$query = "DELETE FROM gasto WHERE id_usuario = '$usuario_id'";
 $ejecutar = mysqli_query($conexion, $query);
 if (!$ejecutar) {
-    echo "Error al actualizar las tablas relacionadas: " . mysqli_error($conexion);
+    echo "Error al eliminar los registros relacionados en la tabla 'gasto': " . mysqli_error($conexion);
+    exit();
+}
+
+// Eliminar los registros relacionados en la tabla 'presupuesto'
+$query = "DELETE FROM presupuesto WHERE id_usuario = '$usuario_id'";
+$ejecutar = mysqli_query($conexion, $query);
+if (!$ejecutar) {
+    echo "Error al eliminar los registros relacionados en la tabla 'presupuesto': " . mysqli_error($conexion);
     exit();
 }
 

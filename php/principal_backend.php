@@ -74,6 +74,14 @@ session_start();
 
 $resultado2 = $conexion->query($consulta2);
 
+$consulta3 = "SELECT categoria.nombre, SUM(gasto.valor) AS total_gastos
+FROM categoria
+LEFT JOIN gasto ON categoria.id_categoria = gasto.id_categoria
+WHERE gasto.id_usuario = $usuario_id
+GROUP BY categoria.id_categoria";
+
+$resultado3 = $conexion->query($consulta3);
+
 
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);

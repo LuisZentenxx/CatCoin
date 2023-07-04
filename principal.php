@@ -24,11 +24,16 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css\style_principal.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+
     <!-- Iconos Font Awesome -->
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
     <!-- Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
 </head>
 
 <body id="body">
@@ -199,23 +204,20 @@
     var mensaje = "";
     var imagenSrc = "";
 
-    if (sumaTotalGastos > presupuesto) {
+    if (presupuesto === 0 && sumaTotalGastos === 0) {
+        mensaje = "Antes de gastar, piensa en ahorrar";
+    } else if (sumaTotalGastos > presupuesto) {
         mensaje = "Se ha superado el presupuesto!";
-
     } else if (sumaTotalGastos === presupuesto) {
-        mensaje = "Malas noticias...Te has quedado sin ahorros!";
-
+        mensaje = "Malas noticias... ¡Te has quedado sin ahorros!";
     } else if (sumaTotalGastos > 0.5 * presupuesto && sumaTotalGastos < presupuesto) {
-        mensaje = "Advertencia! Tus gastos están poniendo en riesgo tu presupuesto.";
-
+        mensaje = "¡Advertencia! Tus gastos están poniendo en riesgo tu presupuesto.";
     } else if (sumaTotalGastos === 0.5 * presupuesto) {
-        mensaje = "Atento! Es hora revisar tus gastos.";
-
+        mensaje = "¡Atento! Es hora de revisar tus gastos.";
     } else if (sumaTotalGastos > 0.3 * presupuesto && sumaTotalGastos <= 0.5 * presupuesto) {
-        mensaje = "Felicitaciones, estás ahorrando: tus gastos están por debajo del 50% de tu presupuesto.";
-
+        mensaje = "¡Felicitaciones, estás ahorrando! Tus gastos están por debajo del 50% de tu presupuesto.";
     } else {
-        mensaje = "Tomate un relajo, tus ahorros están mejor que nunca!"
+        mensaje = "¡Tomate un relajo, tus ahorros están mejor que nunca!";
     }
 
     // Selecciona los elementos donde deseas mostrar el mensaje
@@ -224,6 +226,7 @@
     // Asigna el mensaje y la imagen a los elementos correspondientes
     elementoMensaje.innerHTML = mensaje;
     </script>
+
 
 
 
@@ -306,7 +309,7 @@
     <div id="estadistica">
         <!-- Sección Estadisticas -->
         <div class="title">
-            <h1>Estadísticas</h1>
+            <h1>Estadísticas 📊</h1>
         </div>
 
         <!-- Card gráficos por categoria -->
@@ -316,175 +319,301 @@
             </div>
         </div>
 
+        <div class="card">
+            <div class="card-body">
+                <div id="chart_div_valor_1"></div>
+            </div>
+        </div>
+
+
         <!-- Card gráficos por categoria -->
         <div class="card">
             <div class="card-body">
                 <div id="chart_div"></div>
             </div>
         </div>
-        <!--Footer-->
-        <hr>
-        <footer>
-            <div class="container-footer">
-                <div class="footer-content">
-                    <div class="footer-logo">
-                        <i class="fa-solid fa-cat"></i>
-                    </div>
-                    <div class="footer-links">
-                        <ul>
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Productos</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#">Acerca de nosotros</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-social">
-                        <ul>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+    </div>
+
+    <div class="card card7">
+        <div class="card-body">
+            <h1 style="text-align: center;">Consejos 💡</h1>
+            <div id="slider" class="slider">
+                <div class="slider-item">
+                    <div class="content-wrapper">
+                        <p>Evita endeudarte y prioriza pagar deudas con altas tasas de interés.</p>
+                        <img src="img\Gato_feliz.png" alt="">
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p>Todos los derechos reservados &copy; 2023</p>
+                <div class="slider-item">
+                    <div class="content-wrapper">
+                        <p>Considera invertir parte de tu dinero para hacerlo crecer.</p>
+                        <img src="img\gato_amenaza.png" alt="">
+                    </div>
                 </div>
+                <div class="slider-item">
+                    <div class="content-wrapper">
+                        <p>Evita las compras impulsivas y practica el hábito de reflexionar antes de realizar una compra
+                            importante.</p>
+                        <img src="img\gato_llorando.png" alt="">
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="content-wrapper">
+                        <p>Mantén un registro de tus gastos y revisa regularmente tus estados de cuenta para detectar
+                            posibles errores o cargos innecesarios.</p>
+                        <img src="img\Gato_feliz.png" alt="">
+                    </div>
+                </div>
+                <!-- Agrega más consejos aquí según sea necesario -->
             </div>
-        </footer>
+        </div>
+    </div>
+
+    <style>
+    .slider {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .slider-item {
+        width: 100%;
+        /* Ancho de cada consejo */
+        display: none;
+    }
+
+    .slider-item:first-child {
+        display: flex;
+        justify-content: center;
+        /* Centra horizontalmente */
+        align-items: center;
+        /* Centra verticalmente */
+    }
+
+    .slider-item p {
+        margin-top: 3rem;
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .slider-item img {
+        height: 100px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centra horizontalmente */
+        text-align: center;
+    }
+    </style>
+
+
+    <!--Footer-->
+    <hr>
+    <footer>
+        <div class="container-footer">
+            <div class="footer-bottom">
+                <h2>CatCoin</h2>
+                <p>Todos los derechos reservados &copy; 2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gráfico de gastos totales -->
+    <script>
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Categoría');
+        data.addColumn('number', 'Valor');
+        data.addColumn({
+            type: 'string',
+            role: 'style'
+        }); // Columna adicional para los colores personalizados
+
+        <?php
+    $colors = ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40', '#800000', '#ff5733'];
+    $i = 0;
+    while ($fila = $resultado2->fetch_assoc()) {
+        echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . ", 'color: " . $colors[$i % count($colors)] . "']);";
+        $i++;
+    }
+    ?>
+
+        var options = {
+            title: 'Gráfico de gastos',
+            titleTextStyle: {
+                fontSize: 20 // Tamaño de fuente del título
+            },
+            backgroundColor: 'transparent',
+            chartArea: {
+                left: 50, // Margen izquierdo del área del gráfico
+                top: 50, // Margen superior del área del gráfico
+                width: '80%', // Ancho del área del gráfico
+                height: '80%' // Altura del área del gráfico
+            },
+            legend: {
+                position: 'right', // Posición de la leyenda (derecha)
+                textStyle: {
+                    fontSize: 14, // Tamaño de fuente de la leyenda
+                }
+            },
+            colors: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40', '#800000',
+                '#ff5733'
+            ], // Colores predeterminados para las columnas
+            bar: {
+                groupWidth: '80%'
+            } // Espacio entre las columnas
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_valor'));
+        chart.draw(data, options);
+    }
+    </script>
+
+    <script>
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Categoría');
+        data.addColumn('number', 'Valor');
+
+        <?php
+    $i = 0;
+    while ($fila = $resultado3->fetch_assoc()) {
+        echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
+        $i++;
+    }
+    ?>
+
+        var options = {
+            title: 'Gráfico de gastos',
+            titleTextStyle: {
+                fontSize: 20
+            },
+            backgroundColor: 'transparent',
+            chartArea: {
+                left: 50,
+                top: 50,
+                width: '80%',
+                height: '80%'
+            },
+            legend: {
+                position: 'right',
+                textStyle: {
+                    fontSize: 14
+                }
+            },
+            colors: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40', '#800000',
+                '#ff5733'
+            ],
+            is3D: true,
+            pieHole: 0.4 // Agrega esta línea para crear un agujero en el centro del gráfico de torta
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div_valor_1')); // Cambia a PieChart
+        chart.draw(data, options);
+    }
+    </script>
 
 
 
-        <!-- Gráfico Gastos por categoría -->
+    <!-- Gráfico Gastos por categoría -->
 
-        <script type="text/javascript">
-        google.charts.load('current', {
-            'packages': ['corechart']
-        });
-        google.charts.setOnLoadCallback(drawChart);
+    <script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Categoría');
-            data.addColumn('number', 'Valor');
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Categoría');
+        data.addColumn('number', 'Valor');
 
-            <?php
+        <?php
         while ($fila = $resultado1->fetch_assoc()) {
             echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
         }
         ?>
 
-            var options = {
-                title: 'Gastos por Categoría',
-                titleTextStyle: {
-                    fontSize: 20 // Tamaño de fuente del título
-                },
-                pieHole: 0.4,
-                is3D: true,
-                backgroundColor: 'transparent',
-                chartArea: {
-                    left: 50, // Margen izquierdo del área del gráfico
-                    top: 50, // Margen superior del área del gráfico
-                    width: '80%', // Ancho del área del gráfico
-                    height: '80%' // Altura del área del gráfico
-                },
-                legend: {
-                    position: 'right', // Posición de la leyenda (derecha)
-                    textStyle: {
-                        fontSize: 14, // Tamaño de fuente de la leyenda
-                    }
-                },
-                slices: {
-                    0: {
-                        color: '#ff6384'
-                    }, // Color personalizado para la primera categoría
-                    1: {
-                        color: '#36a2eb'
-                    }, // Color personalizado para la segunda categoría
-                    2: {
-                        color: '#ffce56'
-                    },
-                    3: {
-                        color: '#4bc0c0'
-                    },
-                    4: {
-                        color: '#9966ff'
-                    } // Color personalizado para la tercera categoría
+        var options = {
+            title: 'Gastos por Categoría',
+            titleTextStyle: {
+                fontSize: 20 // Tamaño de fuente del título
+            },
+            pieHole: 0.4,
+            is3D: true,
+            backgroundColor: 'transparent',
+            chartArea: {
+                left: 50, // Margen izquierdo del área del gráfico
+                top: 50, // Margen superior del área del gráfico
+                width: '80%', // Ancho del área del gráfico
+                height: '80%' // Altura del área del gráfico
+            },
+            legend: {
+                position: 'right', // Posición de la leyenda (derecha)
+                textStyle: {
+                    fontSize: 14, // Tamaño de fuente de la leyenda
                 }
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-        }
-        </script>
-
-        <script>
-        google.charts.load('current', {
-            'packages': ['corechart']
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Categoría');
-            data.addColumn('number', 'Valor');
-
-            <?php
-  while ($fila = $resultado2->fetch_assoc()) {
-    echo "data.addRow(['" . $fila['nombre'] . "', " . $fila['total_gastos'] . "]);";
-  }
-  ?>
-
-            var options = {
-                title: 'Gráfico de gastos',
-                titleTextStyle: {
-                    fontSize: 20 // Tamaño de fuente del título
+            },
+            slices: {
+                0: {
+                    color: '#ff6384'
+                }, // Color personalizado para la primera categoría
+                1: {
+                    color: '#36a2eb'
+                }, // Color personalizado para la segunda categoría
+                2: {
+                    color: '#ffce56'
                 },
-                is3D: true,
-                backgroundColor: 'transparent',
-                chartArea: {
-                    left: 50, // Margen izquierdo del área del gráfico
-                    top: 50, // Margen superior del área del gráfico
-                    width: '80%', // Ancho del área del gráfico
-                    height: '80%' // Altura del área del gráfico
+                3: {
+                    color: '#4bc0c0'
                 },
-                legend: {
-                    position: 'right', // Posición de la leyenda (derecha)
-                    textStyle: {
-                        fontSize: 14, // Tamaño de fuente de la leyenda
-                    }
-                },
-                pieSliceText: 'percentage', // Muestra el porcentaje de cada sector
-                colors: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40', '#800000',
-                    '#ff5733'
-                ] // Colores personalizados para cada sector
-            };
+                4: {
+                    color: '#9966ff'
+                } // Color personalizado para la tercera categoría
+            }
+        };
 
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div_valor'));
-            chart.draw(data, options);
-        }
-        </script>
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    </script>
 
-        <script src="js\principal.js"></script>
-        <script src="js\consejos.js"></script>
+    <!-- Scripts principales -->
+    <script src="js\consejo.js"></script>
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js\principal.js"></script>
 
-        <!-- Popper.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <!-- Bootstrap JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-        <!-- script de Swiper -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
-        </script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+    <!-- script de Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
