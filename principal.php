@@ -312,19 +312,19 @@
             <h1>Estadísticas 📊</h1>
         </div>
 
-        <!-- Card gráficos por categoria -->
+        <!-- Card Columna gráficos por total de gastos -->
         <div class="card">
             <div class="card-body">
                 <div id="chart_div_valor"></div>
             </div>
         </div>
 
+        <!-- Card Circular gráficos por total de gastos -->
         <div class="card">
             <div class="card-body">
                 <div id="chart_div_valor_1"></div>
             </div>
         </div>
-
 
         <!-- Card gráficos por categoria -->
         <div class="card">
@@ -334,6 +334,7 @@
         </div>
     </div>
 
+    <!-- Card de Consejos -->
     <div class="card card7">
         <div class="card-body">
             <h1 style="text-align: center;">Consejos 💡</h1>
@@ -411,7 +412,6 @@
 
 
     <!--Footer-->
-    <hr>
     <footer>
         <div class="container-footer">
             <div class="footer-bottom">
@@ -521,12 +521,11 @@
             pieHole: 0.4 // Agrega esta línea para crear un agujero en el centro del gráfico de torta
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div_valor_1')); // Cambia a PieChart
+        var chart = new google.visualization.PieChart(document.getElementById(
+        'chart_div_valor_1')); // Cambia a PieChart
         chart.draw(data, options);
     }
     </script>
-
-
 
     <!-- Gráfico Gastos por categoría -->
 

@@ -82,7 +82,6 @@ GROUP BY categoria.id_categoria";
 
 $resultado3 = $conexion->query($consulta3);
 
-
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
 
